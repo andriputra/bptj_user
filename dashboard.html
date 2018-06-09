@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Badan Pengelola Transportasi Jabodetabek</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Dashboard Style -->
+    <link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/navmenu-reveal.css">
+    <!-- End Dashboard Style -->
+
+    <!-- Style Calendar -->
+    <link href='assets/css/fullcalendar.css' rel='stylesheet' />
+    <link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <!-- Ennd Style Calendar -->
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive-style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/main-script.js"></script>
+    <!-- Dashboard script-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jasny-bootstrap.min.js"></script>
+    <!-- End Dashboard script-->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Script Calendar -->
+    <!-- <script src='assets/js/jquery-1.10.2.js'></script> -->
+    <script src='assets/js/jquery-ui.custom.min.js'></script>
+    <script src="assets/js/fullcalendar.js"></script>
+    <script>
+    	$(document).ready(function() {
+    	  var date = new Date();
+    		var d = date.getDate();
+    		var m = date.getMonth();
+    		var y = date.getFullYear();
+
+    		/*  className colors
+
+    		className: default(transparent), important(red), chill(pink), success(green), info(blue)
+    		*/
+    		/* initialize the external events
+    		-----------------------------------------------------------------*/
+
+    		$('#external-events div.external-event').each(function() {
+
+    			// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+    			// it doesn't need to have a start or end
+    			var eventObject = {
+    				title: $.trim($(this).text()) // use the element's text as the event title
+    			};
+
+    			// store the Event Object in the DOM element so we can get to it later
+    			$(this).data('eventObject', eventObject);
+
+    			// make the event draggable using jQuery UI
+    			$(this).draggable({
+    				zIndex: 999,
+    				revert: true,      // will cause the event to go back to its
+    				revertDuration: 0  //  original position after the drag
+    			});
+
+    		});
+
+
+    		/* initialize the calendar
+    		-----------------------------------------------------------------*/
+
+    		var calendar =  $('#calendar').fullCalendar({
+    			header: {
+    				left: 'title',
+    				center: 'agendaDay,agendaWeek,month',
+    				right: 'prev,next today'
+    			},
+    			editable: true,
+    			firstDay: 1, //  1(Monday) this can be changed to 0(Sunday) for the USA system
+    			selectable: true,
+    			defaultView: 'month',
+
+    			axisFormat: 'h:mm',
+    			columnFormat: {
+                    month: 'ddd',    // Mon
+                    week: 'ddd d', // Mon 7
+                    day: 'dddd M/d',  // Monday 9/7
+                    agendaDay: 'dddd d'
+                },
+                titleFormat: {
+                    month: 'MMMM yyyy', // September 2009
+                    week: "MMMM yyyy", // September 2009
+                    day: 'MMMM yyyy'                  // Tuesday, Sep 8, 2009
+                },
+    			allDaySlot: false,
+    			selectHelper: true,
+    			select: function(start, end, allDay) {
+    				var title = prompt('Event Title:');
+    				if (title) {
+    					calendar.fullCalendar('renderEvent',
+    						{
+    							title: title,
+    							start: start,
+    							end: end,
+    							allDay: allDay
+    						},
+    						true // make the event "stick"
+    					);
+    				}
+    				calendar.fullCalendar('unselect');
+    			},
+    			droppable: true, // this allows things to be dropped onto the calendar !!!
+    			drop: function(date, allDay) { // this function is called when something is dropped
+
+    				// retrieve the dropped element's stored Event Object
+    				var originalEventObject = $(this).data('eventObject');
+
+    				// we need to copy it, so that multiple events don't have a reference to the same object
+    				var copiedEventObject = $.extend({}, originalEventObject);
+
+    				// assign it the date that was reported
+    				copiedEventObject.start = date;
+    				copiedEventObject.allDay = allDay;
+
+    				// render the event on the calendar
+    				// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+    				$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+    				// is the "remove after drop" checkbox checked?
+    				if ($('#drop-remove').is(':checked')) {
+    					// if so, remove the element from the "Draggable Events" list
+    					$(this).remove();
+    				}
+
+    			},
+
+    			events: [
+    				{
+    					title: 'All Day Event',
+    					start: new Date(y, m, 1)
+    				},
+    				{
+    					id: 999,
+    					title: 'Repeating Event',
+    					start: new Date(y, m, d-3, 16, 0),
+    					allDay: false,
+    					className: 'info'
+    				},
+    				{
+    					id: 999,
+    					title: 'Repeating Event',
+    					start: new Date(y, m, d+4, 16, 0),
+    					allDay: false,
+    					className: 'info'
+    				},
+    				{
+    					title: 'Meeting',
+    					start: new Date(y, m, d, 10, 30),
+    					allDay: false,
+    					className: 'important'
+    				},
+    				{
+    					title: 'Lunch',
+    					start: new Date(y, m, d, 12, 0),
+    					end: new Date(y, m, d, 14, 0),
+    					allDay: false,
+    					className: 'important'
+    				},
+    				{
+    					title: 'Birthday Party',
+    					start: new Date(y, m, d+1, 19, 0),
+    					end: new Date(y, m, d+1, 22, 30),
+    					allDay: false,
+    				},
+    				{
+    					title: 'Click for Google',
+    					start: new Date(y, m, 28),
+    					end: new Date(y, m, 29),
+    					url: 'http://google.com/',
+    					className: 'success'
+    				}
+    			],
+    		});
+    	});
+    </script>
+    <!--End script Calendar -->
+  </head>
+<body class="bg-grey col-dark">
+  <div class="navmenu navmenu-default navmenu-fixed-left">
+      <a class="navmenu-brand" href="#"><img src="assets/img/dash-main-icon.png" class="img-responsive inline-block"> Dashboard</a>
+      <ul class="nav navmenu-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/dash-menu.png" class="img-responsive inline-block">Menu <i class="fa fa-chevron-down col-white" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 1</a></li>
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 2</a></li>
+          </ul>
+        </li>
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle rotate" data-toggle="dropdown"><img src="assets/img/dash-folder.png" class="img-responsive inline-block">Artikel <i class="fa fa-chevron-down col-white" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 1</a></li>
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 2</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/dash-galeri.png" class="img-responsive inline-block">Banner <i class="fa fa-chevron-down col-white" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 1</a></li>
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 2</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/dash-announcement.png" class="img-responsive inline-block">Pengumuman <i class="fa fa-chevron-down col-white" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 1</a></li>
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 2</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/dash-book.png" class="img-responsive inline-block">Blok <i class="fa fa-chevron-down col-white" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 1</a></li>
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 2</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/dash-newspapper.png" class="img-responsive inline-block">Berita <i class="fa fa-chevron-down col-white" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 1</a></li>
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 2</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/dash-user-guard.png" class="img-responsive inline-block">User <i class="fa fa-chevron-down col-white" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 1</a></li>
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 2</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/dash-blink.png" class="img-responsive inline-block">Setting <i class="fa fa-chevron-down col-white" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 1</a></li>
+            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Link 2</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="float-bottom">
+        <ul>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">HELP</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="container-fluid header">
+        <div class="dash-header">
+          <div class="navbar navbar-default navbar-fixed-top">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <img src="assets/img/logo-dashboard.png" alt="" class="img-responsive inline-block logo-dashboard">
+          <div class="notification">
+            <ul class="notify">
+              <li>
+                <a href="#"><img src="assets/img/dash-user.png" alt="icon" class="img-responsive inline-block"></a>
+              </li>
+              <li>
+                <a href="#"><img src="assets/img/dash-chat.png" alt="icon" class="img-responsive inline-block"></a>
+              </li>
+              <li>
+                <a href="#"><img src="assets/img/dash-ringing.png" alt="icon" class="img-responsive inline-block"></a>
+                <span class="notify-count">2</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Breadcrumb Dashboard -->
+      <div class="breadcrumb dashboard">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-9 col-xs-12">
+              <div class="info-dashboard">
+                <h1 class="name-title col-white">DASHBOARD</h1>
+                <div class="breadcrumb-info">
+                  <i class="fa fa-home" aria-hidden="true"></i> <a href="#">Home</a> <span class="divider">/</span> <a href="#" class="active">Dashboard</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-12">
+              <div class="search-dashboard">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="#"></i></button>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Search for...">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Breadcrumb Dashboard -->
+
+      <div class="container-fluid top-info">
+        <div class="top-info-dashboard">
+          <div class="row">
+            <div class="col-md-3 col-xs-12 col-sm-6">
+              <div class="block red">
+                <div class="icon">
+                  <img src="assets/img/dash-artikel.png" alt="icon" class="img-responsive inline-block">
+                </div>
+                <div class="count">
+                  <span class="number">151</span>
+                  <span class="text">Berita Terkini</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-12 col-sm-6">
+              <div class="block cyan">
+                <div class="icon">
+                  <img src="assets/img/dash-papper.png" alt="icon" class="img-responsive inline-block">
+                </div>
+                <div class="count">
+                  <span class="number">40</span>
+                  <span class="text">Halaman</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-12 col-sm-6">
+              <div class="block blue">
+                <div class="icon">
+                  <img src="assets/img/dash-image-crash.png" alt="icon" class="img-responsive inline-block">
+                </div>
+                <div class="count">
+                  <span class="number">360</span>
+                  <span class="text">Foto</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-12 col-sm-6">
+              <div class="block orange">
+                <div class="icon">
+                  <img src="assets/img/dash-video.png" alt="icon" class="img-responsive inline-block">
+                </div>
+                <div class="count">
+                  <span class="number">65</span>
+                  <span class="text">Video</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting foto">
+        <div class="container-fluid">
+          <div class="header-block">
+            <h4 class="title">Album Foto</h4>
+            <div class="sett">
+              <a href="#"><img src="assets/img/dash-gear.png" alt="gear" class="img-responsive inline-block"></a>
+              <a href="#"><img src="assets/img/head-menu.png" alt="menu" class="img-responsive inline-block"></a>
+            </div>
+          </div>
+          <div class="white-block">
+            <div class="add-btn">
+              <button type="button" name="button" class="btn bg-yellow col-white"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Tambah</button>
+            </div>
+            <div class="search">
+              <div class="row">
+                <div class="col-md-6 col-xs-12">
+                  <div class="entries">
+                    <span>Show</span>
+                    <select class="show-entries" name="">
+                      <option value="10">10</option>
+                      <option value="10">20</option>
+                      <option value="10">30</option>
+                    </select>
+                    <span>entries</span>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                  <div class="search-col">
+                    <span>Search:</span>
+                    <input type="text" name="search" value="" placeholder="" class="input">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table-list">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th>ID <img src="assets/img/topdown.png" class="img-responsive inline-block"></th>
+                      <th>Judul <img src="assets/img/topdown.png" class="img-responsive inline-block"></th>
+                      <th>Tanggal <img src="assets/img/topdown.png" class="img-responsive inline-block"></th>
+                      <th>Sampul <img src="assets/img/topdown.png" class="img-responsive inline-block"></th>
+                      <th>Status <img src="assets/img/topdown.png" class="img-responsive inline-block"></th>
+                      <th>Action <img src="assets/img/topdown.png" class="img-responsive inline-block"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td>10</td>
+                        <td>Menteri PUPR Basuki Hadimuljono meninjau progres pembangunan jembatan Merah Putih</td>
+                        <td>24/11/2015</td>
+                        <td><img src="assets/img/sampul.png" class="img-responsive inline-block"></td>
+                        <td>Aktif</td>
+                        <td>
+                          <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                          <a href="#"><img src="assets/img/gall-fold.png" class="img-responsive inline-block"></a>
+                          <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                      </tr>
+                    <tr>
+                      <td>19</td>
+                      <td>Menteri PUPR Basuki Hadimuljono meninjau progres pembangunan jembatan Merah Putih</td>
+                      <td>24/11/2015</td>
+                      <td><img src="assets/img/sampul.png" class="img-responsive inline-block"></td>
+                      <td>Aktif</td>
+                      <td>
+                        <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a href="#"><img src="assets/img/gall-fold.png" class="img-responsive inline-block"></a>
+                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>100</td>
+                      <td>Menteri PUPR Basuki Hadimuljono meninjau progres pembangunan jembatan Merah Putih</td>
+                      <td>24/11/2015</td>
+                      <td><img src="assets/img/sampul.png" class="img-responsive inline-block"></td>
+                      <td>Aktif</td>
+                      <td>
+                        <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a href="#"><img src="assets/img/gall-fold.png" class="img-responsive inline-block"></a>
+                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>ID</th>
+                      <th>Judul</th>
+                      <th>Tanggal</th>
+                      <th>Sampul</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <div class="footer-list-table">
+                <div class="row">
+                  <div class="col-md-6 col-xs-12">
+                    <span class="show-en">Showing</span><span class="count1">1</span> <span>to</span> <span class="count1">10</span> <span class="end">entries</span>
+                  </div>
+                  <div class="col-md-6 col-xs-12">
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination">
+                        <li>
+                          <a href="#" aria-label="Previous">Previous</a>
+                        </li>
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">Next</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Setting Agenda -->
+      <div class="col-half-block">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="white-block">
+                <div class="calendar">
+                  <div class="calendar-event">
+                    <div id='wrap'>
+                      <div id='calendar'></div>
+                      <div style='clear:both'></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="white-block">
+                <div class="agenda">
+                  <div class="header-block">
+                    <span class="title">Agenda Kegiatan</span>
+                    <div class="sett">
+                      <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                      <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                  <ul class="agenda-list">
+                    <li>
+                      <div class="date">
+                        <span class="date">9</span>
+                        <span class="month">SEP</span>
+                      </div>
+                      <img src="assets/img/Logo.png" alt="" class="img-responsive inline-block">
+                      <div class="info-text">
+                        <p><a href="#">Satgas Asian Games XVIII</a></p>
+                        <span>add by : Gerry Salim at 12.30pam</span>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date">
+                        <span class="date">12</span>
+                        <span class="month">SEP</span>
+                      </div>
+                      <img src="assets/img/Logo.png" alt="" class="img-responsive inline-block">
+                      <div class="info-text">
+                        <p><a href="#">Satgas Asian Games XVIII</a></p>
+                        <span>add by : Gerry Salim at 12.30pam</span>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date">
+                        <span class="date">30</span>
+                        <span class="month">SEP</span>
+                      </div>
+                      <img src="assets/img/Logo.png" alt="" class="img-responsive inline-block">
+                      <div class="info-text">
+                        <p><a href="#">Satgas Asian Games XVIII</a></p>
+                        <span>add by : Gerry Salim at 12.30pam</span>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date">
+                        <span class="date">10</span>
+                        <span class="month">SEP</span>
+                      </div>
+                      <img src="assets/img/Logo.png" alt="" class="img-responsive inline-block">
+                      <div class="info-text">
+                        <p><a href="#">Satgas Asian Games XVIII</a></p>
+                        <span>add by : Gerry Salim at 12.30pam</span>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="date">
+                        <span class="date">19</span>
+                        <span class="month">SEP</span>
+                      </div>
+                      <img src="assets/img/Logo.png" alt="" class="img-responsive inline-block">
+                      <div class="info-text">
+                        <p><a href="#">Satgas Asian Games XVIII</a></p>
+                        <span>add by : Gerry Salim at 12.30pam</span>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Setting Agenda -->
+
+      <!-- Setting post -->
+      <div class="container-fluid">
+        <div class="setting-post">
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="archive-post">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active"><a href="#beritaterkini" aria-controls="beritaterkini" role="tab" data-toggle="tab">Berita Terkini</a></li>
+                  <li role="presentation"><a href="#artikel" aria-controls="artikel" role="tab" data-toggle="tab">Artikel</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="beritaterkini">
+                    <ul class="list-berita">
+                      <li>
+                        <div class="img-post inline-block">
+                          <img src="assets/img/latest-image.png" alt="image" class="img-responsive inline-block">
+                        </div>
+                        <div class="post">
+                          <p>Cegah Terulangnya Banjir Bandang, Kementerian PUPR Rampungkan Pengendali ...</p>
+                          <span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> 20mins</span>
+                          <div class="float-right share">
+                            <span class="visit"><i class="fa fa-eye" aria-hidden="true"></i> 16</span>
+                            <span class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 11</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="img-post inline-block">
+                          <img src="assets/img/latest-image.png" alt="image" class="img-responsive inline-block">
+                        </div>
+                        <div class="post">
+                          <p>Cegah Terulangnya Banjir Bandang, Kementerian PUPR Rampungkan Pengendali ...</p>
+                          <span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> 20mins</span>
+                          <div class="float-right share">
+                            <span class="visit"><i class="fa fa-eye" aria-hidden="true"></i> 16</span>
+                            <span class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 11</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="img-post inline-block">
+                          <img src="assets/img/latest-image.png" alt="image" class="img-responsive inline-block">
+                        </div>
+                        <div class="post">
+                          <p>Cegah Terulangnya Banjir Bandang, Kementerian PUPR Rampungkan Pengendali ...</p>
+                          <span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> 20mins</span>
+                          <div class="float-right share">
+                            <span class="visit"><i class="fa fa-eye" aria-hidden="true"></i> 16</span>
+                            <span class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 11</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="img-post inline-block">
+                          <img src="assets/img/latest-image.png" alt="image" class="img-responsive inline-block">
+                        </div>
+                        <div class="post">
+                          <p>Cegah Terulangnya Banjir Bandang, Kementerian PUPR Rampungkan Pengendali ...</p>
+                          <span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> 20mins</span>
+                          <div class="float-right share">
+                            <span class="visit"><i class="fa fa-eye" aria-hidden="true"></i> 16</span>
+                            <span class="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 11</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="artikel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus tempor tortor, sed sagittis turpis suscipit sed.
+                      Etiam consequat tellus ante, eu sodales nisl bibendum eget. Quisque ut eros faucibus, facilisis lacus eget, mattis orci.<br>
+                      Vivamus tristique arcu et augue semper tincidunt. Phasellus nulla ligula, cursus a arcu eget, pulvinar aliquet est.
+                      Maecenas sollicitudin neque ut mauris ultricies vestibulum. Cras pellentesque odio ut dictum tempus.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus tempor tortor, sed sagittis turpis suscipit sed.
+                        Etiam consequat tellus ante, eu sodales nisl bibendum eget. Quisque ut eros faucibus, facilisis lacus eget, mattis orci.<br>
+                        Vivamus tristique arcu et augue semper tincidunt. Phasellus nulla ligula, cursus a arcu eget, pulvinar aliquet est.
+                        Maecenas sollicitudin neque ut mauris ultricies vestibulum. Cras pellentesque odio ut dictum tempus.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="archive-post half-block-archive">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active"><a href="#user" aria-controls="user" role="tab" data-toggle="tab">User</a></li>
+                  <li role="presentation"><a href="#banner" aria-controls="banner" role="tab" data-toggle="tab">Banner</a></li>
+                  <li role="presentation"><a href="#blok" aria-controls="blok" role="tab" data-toggle="tab">Blok</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="user">
+                    <ul class="list-berita">
+                      <li>
+                        <div class="img-post inline-block">
+                          <img src="assets/img/dash-actor.png" alt="image" class="img-responsive inline-block">
+                        </div>
+                        <div class="post">
+                          <p>Ahmad Mubarak mengirimin Anda pesan<br>Seorang anak laki-laki terseret bus transjakarta ketika akan naik</p>
+                          <span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> 1 hour ago</span>
+                        </div>
+                        <div class="float-right share">
+                          <span class="setting"><a href="#"><img src="assets/img/settings-post.png"></a></span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="img-post inline-block">
+                          <img src="assets/img/dash-actor.png" alt="image" class="img-responsive inline-block">
+                        </div>
+                        <div class="post">
+                          <p>Ahmad Mubarak mengirimin Anda pesan<br>Seorang anak laki-laki terseret bus transjakarta ketika akan naik</p>
+                          <span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> 1 hour ago</span>
+                        </div>
+                        <div class="float-right share">
+                          <span class="setting"><a href="#"><img src="assets/img/settings-post.png"></a></span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="img-post inline-block">
+                          <img src="assets/img/dash-actor.png" alt="image" class="img-responsive inline-block">
+                        </div>
+                        <div class="post">
+                          <p>Cegah Terulangnya Banjir Bandang, Kementerian PUPR Rampungkan Pengendali ...</p>
+                          <span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> 1 hour ago</span>
+                        </div>
+                        <div class="float-right share">
+                          <span class="setting"><a href="#"><img src="assets/img/settings-post.png"></a></span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="img-post inline-block">
+                          <img src="assets/img/dash-actor.png" alt="image" class="img-responsive inline-block">
+                        </div>
+                        <div class="post">
+                          <p>Cegah Terulangnya Banjir Bandang, Kementerian PUPR Rampungkan Pengendali ...</p>
+                          <span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> 1 hour ago</span>
+                        </div>
+                        <div class="float-right share">
+                          <span class="setting"><a href="#"><img src="assets/img/settings-post.png"></a></span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="banner">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus tempor tortor, sed sagittis turpis suscipit sed.
+                      Etiam consequat tellus ante, eu sodales nisl bibendum eget. Quisque ut eros faucibus, facilisis lacus eget, mattis orci.<br>
+                      Vivamus tristique arcu et augue semper tincidunt. Phasellus nulla ligula, cursus a arcu eget, pulvinar aliquet est.
+                      Maecenas sollicitudin neque ut mauris ultricies vestibulum. Cras pellentesque odio ut dictum tempus.</p>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="blok">
+                    <ul class="list-berita">
+                      <li>
+                        <div class="img-post inline-block">
+                          <img src="assets/img/dash-actor.png" alt="image" class="img-responsive inline-block">
+                        </div>
+                        <div class="post">
+                          <p>Cegah Terulangnya Banjir Bandang, Kementerian PUPR Rampungkan Pengendali ...</p>
+                          <span class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> 1 hour ago</span>
+                        </div>
+                        <div class="float-right share">
+                          <span class="setting"><a href="#"><img src="assets/img/settings-post.png"></a></span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Setting post -->
+    </div>
+  </body>
+</html>
