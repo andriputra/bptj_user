@@ -128,6 +128,125 @@
     margin-bottom: 50px;
   }
   /* End Register */
+
+  /* Dashboard User */
+  .navmenu-default .slide-menu .navbar.slide-button{
+    background: transparent;
+    border: none;
+  }
+  .canvas{
+    padding-top: 0px;
+  }
+  .canvas .navbar-default{
+    border: none;
+    background: transparent;
+  }
+  .canvas .navbar-default .navbar-toggle{
+    margin: 0px;
+  }
+  .canvas .dash-header .notification{
+    float: none;
+    width: 100%;
+    padding-right: 0px;
+    position: unset;
+  }
+  .canvas .dash-header .notification ul.notify{
+    margin-top: 16px;
+    text-align: center;
+  }
+  .canvas .dash-header .notification .logout{
+    height: 53px;
+    top: 0px;
+    width: 20%;
+  }
+  .canvas .dash-header .notification .logout a{
+    padding-top: 9px;
+    color: #ffffff;
+  }
+  .canvas .dash-header .notification .logout a span{
+    font-size: 10px;
+    color: #ffffff;
+  }
+  .canvas .breadcrumb.dashboard .info-dashboard h1.name-title{
+    font-size: 18px;
+  }
+  .canvas .breadcrumb.dashboard .info-dashboard .breadcrumb-info a,
+  .canvas .breadcrumb.dashboard .info-dashboard .breadcrumb-info a:hover{
+    font-size: 12px;
+  }
+  .canvas .breadcrumb.dashboard .search-dashboard .input-group {
+    margin-top: 30px;
+  }
+  .top-info.izin .box-shadow .button-daftar{
+    width: 60%;
+  }
+  .top-info-dashboard .grey-box {
+    background-color: #f2f2f2;
+    padding: 30px 30px;
+    min-height: auto;
+  }
+  .top-info-dashboard .white-box ul li .desc{
+    width: 75%;
+  }
+  .top-info-dashboard .white-box ul li:first-child::before {
+    height: 45%;
+  }
+  .bottom-info .guide {
+    padding: 10px;
+  }
+  .bottom-info .guide ul li a{
+    position: relative;
+  }
+  .bottom-info .guide ul li a i{
+    position: absolute;
+    left: 0px;
+    top: 3px;
+  }
+  .bottom-info .guide ul li a span{
+    display: block;
+  }
+  .canvas .copywriting p{
+    font-size: 10px;
+    text-align: center;
+  }
+  .canvas .breadcrumb.dashboard .info-dashboard h1.name-title{
+    margin-bottom: 16px;
+  }
+  .dash-input .top-info-dashboard h3.title-form{
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .dash-input .top-info-dashboard .inner-form a.bypass-link{
+    padding: 10px 20px;
+    margin-bottom: 15px;
+  }
+  .dash-input .top-info-dashboard .section .header-section {
+    padding: 15px;
+  }
+  .dash-input .top-info-dashboard .section .header-section h4 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .dash-input .top-info-dashboard .inner-form {
+    padding: 16px;
+  }
+  .dash-input .top-info-dashboard .inner-form .form-group input[type="number"]{
+    width: 100%;
+  }
+  .dash-input .top-info-dashboard .inner-form .label-upload.prog,
+  .dash-input .top-info-dashboard .inner-form .label-upload{
+    top: 0px;
+  }
+  .dash-input .top-info-dashboard .button-submit-form button {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding: 12px;
+  }
+  .dash-input .top-info-dashboard .button-submit-form button.btn-submit{
+    margin-bottom: 0px;
+  }
+  /* End Dashboard User */
 }
 
 @media (min-width: 320px) and (max-width: 767px) and (orientation: landscape){
@@ -172,6 +291,43 @@
   }
   .archive-post{
     margin-bottom: 20px;
+  }
+  .navmenu-default .slide-menu .navbar.slide-button{
+    background: transparent;
+    border: none;
+  }
+  .canvas .dash-header .notification{
+    width: 40%;
+  }
+  .canvas .dash-header .notification ul.notify li{
+    margin-right: 6px;
+  }
+  .top-info.izin .box-shadow .image-icon {
+    display: block;
+  }
+  .top-info.izin .box-shadow .image-icon img{
+    margin: 0 auto;
+  }
+  .top-info.izin .box-shadow .button-daftar {
+    margin-left: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  .top-info.izin .box-shadow .button-daftar a.btn-link{
+    float: none;
+  }
+  .top-info-dashboard .white-box ul li .desc{
+    width: 80%;
+  }
+  .top-info-dashboard .grey-box{
+    min-height: 501px;
+  }
+  .top-info-dashboard .white-box ul li:first-child::before {
+    content: '';
+    height: 58%;
+  }
+  .canvas .breadcrumb.dashboard .info-dashboard h1.name-title{
+    margin-bottom: 0px;
   }
   /* End dashboard Tab */
 }

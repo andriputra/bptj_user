@@ -997,4 +997,153 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
 }
 /* End Izin Dashboard */
 
+/* Dashboard Input */
+.dash-input{
+  padding: 30px 20px 0px;
+}
+.dash-input .top-info-dashboard h3.title-form{
+  margin-top: 0px;
+  font-weight: 600;
+  margin-bottom: 27px;
+}
+.dash-input .top-info-dashboard .section{
+  background-color: #ffffff;
+}
+.dash-input .top-info-dashboard .section .header-section{
+  padding: 30px;
+  border-bottom: 2px solid #e6e7e9;
+}
+.dash-input .top-info-dashboard .section .header-section h4{
+  margin: 0px;
+  font-weight: 600;
+}
+.dash-input .top-info-dashboard .section .header-section h4 a{
+  color: #a2abb2;
+  float: right;
+  font-size: 20px;
+}
+.dash-input .top-info-dashboard .col-md-6{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.dash-input .top-info-dashboard .inner-form{
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.dash-input .top-info-dashboard .inner-form .form-group input{
+  border-radius: 0px;
+}
+.dash-input .top-info-dashboard .inner-form .form-group input[type="number"]{
+  width: 25%;
+}
+.dash-input .top-info-dashboard .inner-form .form-group label span.red{
+  color: #f91e1e;
+}
+.dash-input .top-info-dashboard .inner-form a.bypass-link{
+  display: inline-block;
+  background: #ffb619;
+  padding: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.dash-input .top-info-dashboard .inner-form a.bypass-link i{
+  font-size: 20px;
+  margin-left: 20px;
+}
+.dash-input .top-info-dashboard .inner-form .label-upload.prog{
+  position: relative;
+  top: -39px;
+}
+.dash-input .top-info-dashboard .inner-form .label-upload{
+  position: relative;
+  top: -12px;
+}
+.dash-input .top-info-dashboard .inner-form .upload-btn-wrapper.prog,
+.dash-input .top-info-dashboard .inner-form .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 80%;
+}
+.dash-input .top-info-dashboard .inner-form .upload-btn-wrapper.prog .progress-bar-upload{
+  width: 100%;
+  height: 10px;
+  background: #e6e7e9;
+  display: block;
+  margin-top: 6px;
+  border: 1px solid #e6e7e9;
+  position: relative;
+  margin-bottom: 12px;
+}
+.dash-input .top-info-dashboard .inner-form .upload-btn-wrapper .progress-bar-upload::before{
+  content: '';
+  background-color: #89b23f;
+  width: 50%;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.dash-input .top-info-dashboard .inner-form .upload-btn-wrapper.prog .btn-upload,
+.dash-input .top-info-dashboard .inner-form .upload-btn-wrapper .btn-upload {
+  color: #333333;
+  background-color: #ffb619;
+  padding: 8px;
+  border: none;
+  border-radius: 0px;
+  font-size: 14px;
+  width: 100%;
+}
+.dash-input .top-info-dashboard .inner-form .upload-btn-wrapper .btn-upload{
+  background-color: #e6e7e9;
+}
+.dash-input .top-info-dashboard .inner-form .upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.dash-input .top-info-dashboard .inner-form .input-group.date input[type=date] {
+  border-right: none;
+}
+.dash-input .top-info-dashboard .inner-form .input-group.date .input-group-addon{
+  border-radius: 0px;
+  background: #ffffff;
+}
+.dash-input .top-info-dashboard .inner-form i.check {
+  position: relative;
+  top: -28px;
+  font-size: 20px;
+  margin-left: 20px;
+  color: #a2abb2;
+}
+.dash-input .top-info-dashboard .button-submit-form {
+  margin-bottom: 40px;
+}
+.dash-input .top-info-dashboard .button-submit-form button{
+  width: 90%;
+  border: none;
+  color: #333333;
+  background: #c5c5c5;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.dash-input .top-info-dashboard .button-submit-form button.btn-submit{
+  background: #ffb619;
+  color: #333333;
+  float: right;
+}
+.dash-input .top-info-dashboard .button-submit-form button.btn-submit:hover{
+  background: #c5c5c5;
+}
+.dash-input .top-info-dashboard .button-submit-form button.btn-submit i{
+  float: right;
+  color: #ffffff;
+  font-size: 25px;
+}
+/* End Dashboard Input */
+
 /* END DASHBOARD PAGE */

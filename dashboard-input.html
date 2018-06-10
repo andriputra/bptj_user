@@ -126,10 +126,259 @@
       </div>
       <!-- End Breadcrumb Dashboard -->
 
-      <div class="container-fluid top-info izin">
+      <div class="container-fluid top-info dash-input">
         <div class="top-info-dashboard">
           <div class="row">
-            
+            <h3 class="title-form">Isi Form Permohonan dan Upload Dokumen Permohonan 2/3</h3>
+            <form class="form-section" action="dashboard-input.html" method="post">
+              <div class="section one">
+                <div class="header-section">
+                  <h4>Form Permohonan Izin Baru Angkutan Perkotaan <a><i class="fa fa-info-circle" aria-hidden="true"></i></a></h4>
+                </div>
+                <div class="inner-form">
+                  <div class="row">
+                    <div class="col-md-6 col-xs-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="trayek">Kode Trayek <span class="red">(*)</span></label>
+                        <input type="text" id="trayek" class="form-control input-md" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12 col-sm-6">
+                      <a href="#" class="bypass-link">Saya tidak mempunyai kode trayek <i class="fa fa-share" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-xs-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="">Nama Pemukiman <span class="red">(*)</span></label>
+                        <input type="text" id="" class="form-control input-md" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="">Tujuan Perjalanan <span class="red">(*)</span></label>
+                        <input type="text" id="" class="form-control input-md" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-xs-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="">Tempat Pemberhentian <span class="red">(*)</span></label>
+                        <input type="text" id="" class="form-control input-md" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12 col-sm-6">
+                      <div class="form-group">
+                        <label for="">Jumlah Kendaraan <span class="red">(*)</span></label>
+                        <input type="number" id="" class="form-control input-md" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="section two">
+                <div class="header-section">
+                  <h4>Upload Dokumen Permohonan Izin Baru Angkutan Pemukiman <a><i class="fa fa-info-circle" aria-hidden="true"></i></a></h4>
+                </div>
+                <div class="inner-form">
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Nomor Surat Permohonan</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <input type="text" id="" class="form-control input-md" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Tanggal Surat Permohonan</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <input type="text" id="" class="form-control input-md" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Dokumen Pemohon</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <span class="label-upload prog">Upload File :</span>
+                        <div class="upload-btn-wrapper prog">
+                          <button class="btn-upload">Upload PDF</button>
+                          <input type="file" name="myfile" />
+                          <span class="progress-bar-upload"></span>
+                        </div>
+                        <i class="fa fa-check-circle check" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Dokumen NPWP</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <span class="label-upload">Upload File :</span>
+                        <div class="upload-btn-wrapper">
+                          <button class="btn-upload">Upload PDF</button>
+                          <input type="file" name="myfile" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Dokumen NPWP Pimpinan</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <span class="label-upload">Upload File :</span>
+                        <div class="upload-btn-wrapper">
+                          <button class="btn-upload">Upload PDF</button>
+                          <input type="file" name="myfile" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Dokumen Akte Pendirian dan Perubahan</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <span class="label-upload">Upload File :</span>
+                        <div class="upload-btn-wrapper">
+                          <button class="btn-upload">Upload PDF</button>
+                          <input type="file" name="myfile" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Dokumen Pengesahan Kumham Pendirian Perusahaan</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <span class="label-upload">Upload File :</span>
+                        <div class="upload-btn-wrapper">
+                          <button class="btn-upload">Upload PDF</button>
+                          <input type="file" name="myfile" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Nomor Surat TDP</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <input type="text" id="" class="form-control input-md" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Tanggal Surat TDP</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type='date' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Dokumen TDP</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <span class="label-upload">Upload File :</span>
+                        <div class="upload-btn-wrapper">
+                          <button class="btn-upload">Upload PDF</button>
+                          <input type="file" name="myfile" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Nomor Surat SIUP</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <input type="text" id="" class="form-control input-md" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Tanggal Surat SIUP</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type='date' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Dokumen SIUP</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <span class="label-upload">Upload File :</span>
+                        <div class="upload-btn-wrapper">
+                          <button class="btn-upload">Upload PDF</button>
+                          <input type="file" name="myfile" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-5 col-xs-12 col-sm-5">
+                        <label for="">Dokumen Domisili</label>
+                      </div>
+                      <div class="col-md-7 col-xs-12 col-sm-7">
+                        <span class="label-upload">Upload File :</span>
+                        <div class="upload-btn-wrapper">
+                          <button class="btn-upload">Upload PDF</button>
+                          <input type="file" name="myfile" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="button-submit-form">
+                <div class="row">
+                  <div class="col-md-6 col-xs-12 col-sm-6">
+                    <button type="button" name="button" class="btn-cancel">BATAL</button>
+                  </div>
+                  <div class="col-md-6 col-xs-12 col-sm-6">
+                    <button type="submit" name="button" class="btn-submit"><span class="text">AJUKAN PERMOHONAN</span> <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
