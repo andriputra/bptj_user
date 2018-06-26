@@ -254,6 +254,10 @@
     width: 100%;
   }
   /* End Penambahan Kartu */
+  .input-group.date.change {
+    display: inline-block;
+    width: 100%;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 767px) and (orientation: landscape){

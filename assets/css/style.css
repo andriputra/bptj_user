@@ -760,6 +760,7 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
 }
 .canvas .breadcrumb.dashboard .info-dashboard h1.name-title.bread{
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 .canvas .breadcrumb.dashboard .info-dashboard .breadcrumb-info{
   color: #a2abb2;
@@ -1247,8 +1248,19 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
 .form-table table td .upload{
   border: none;
 }
-/* Masa Berlaku */
-
-/* End Masa Berlaku */
+/* Pergantian Dokumen */
+.input-group.date.change{
+  display: inline-block;
+  width: 48%;
+}
+.input-group.date.change input{
+  width: 90%;
+}
+.input-group.date.change span.input-group-addon{
+  display: inline-block;
+  width: 10%;
+  padding: 8px;
+}
+/* End Pergantian Dokumen */
 
 /* END DASHBOARD PAGE */
