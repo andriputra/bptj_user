@@ -1011,7 +1011,9 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
 }
 .dash-input .top-info-dashboard .section .header-section{
   padding: 30px;
-  border-bottom: 2px solid #e6e7e9;
+  border-bottom: 2px solid #202056;
+  background: #202056;
+  color: #ffffff;
 }
 .dash-input .top-info-dashboard .section .header-section h4{
   margin: 0px;
@@ -1145,5 +1147,47 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
   font-size: 25px;
 }
 /* End Dashboard Input */
+
+/* Penambahan Kartu */
+.button-add{
+  margin-bottom: 30px;
+}
+.button-add button{
+  background: #ffb619;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 18px;
+}
+.button-add button:hover{
+  background: #c5c5c5;
+  color: #000;
+}
+.form-table table{
+  width: 100%;
+  text-align: center;
+}
+.form-table table thead{
+  background: #e6e7e9;
+}
+.form-table table thead th{
+  text-align: center;
+  padding: 10px;
+  border: none;
+}
+.form-table table tbody td{
+  padding: 10px;
+}
+.form-group.half{
+  width: 100%;
+}
+.form-group.half input{
+  display: inline-block;
+  width: 47%;
+}
+.form-group.half p{
+  text-align: left;
+}
+/* End Penambahan Kartu */
 
 /* END DASHBOARD PAGE */

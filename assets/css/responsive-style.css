@@ -247,6 +247,13 @@
     margin-bottom: 0px;
   }
   /* End Dashboard User */
+
+  /* Penambahan Kartu */
+  .form-group.half input{
+    display: block;
+    width: 100%;
+  }
+  /* End Penambahan Kartu */
 }
 
 @media (min-width: 320px) and (max-width: 767px) and (orientation: landscape){
