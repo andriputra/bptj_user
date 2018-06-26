@@ -129,96 +129,80 @@
       <div class="container-fluid top-info dash-input">
         <div class="top-info-dashboard">
           <div class="row">
-            <form class="form-section" action="dashboard-input.html" method="post">
+            <form class="form-section" action="kartu-pengawasan.html" method="post">
               <div class="section one">
                 <div class="header-section">
-                  <h4>Form Penambahan Kartu Pengawasan <a><i class="fa fa-info-circle" aria-hidden="true"></i></a></h4>
+                  <h4>Monitoring Berkas Penambahan Kartu Pengawasan <a><i class="fa fa-info-circle" aria-hidden="true"></i></a></h4>
                 </div>
                 <div class="inner-form">
-                  <div class="button-add">
-                    <button><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah</button>
-                  </div>
                   <div class="form-table table table-responsive">
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th>Tanda Nomor Kendaraan</th>
-                          <th>Nomor Uji Kendaraan</th>
-                          <th>Merek Kendaraan</th>
-                          <th>Tahun Pembuatan</th>
-                          <th>Tahun Registrasi</th>
-                          <th>Daya Angkut Penumpang</th>
-                          <th>Daya Angkut Barang</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>D 23456 JK</td>
-                          <td>DGHY892010</td>
-                          <td>Suzuki</td>
-                          <td>2018</td>
-                          <td>2018</td>
-                          <td>23</td>
-                          <td>20</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <div class="form-table table table-responsive">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Kode Trayek</th>
-                          <th>Nomor Trayek</th>
-                          <th>Asal - Tujuan</th>
-                          <th>Lintasan / Rute</th>
+                          <th>
+                            <input type="checkbox">
+                          </th>
+                          <th class="text-left">Data input <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></th>
+                          <th class="text-left">Status <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></th>
+                          <th class="text-left">Action <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td>
-                            <div class="form-group">
-                              <input type="text" name="kode" value="" class="form-control">
-                            </div>
+                            <input type="checkbox">
                           </td>
+                          <td class="text-left">Form Penambahan Kartu Pengawasan</td>
+                          <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
                           <td>
-                            <div class="form-group">
-                              <input type="text" name="kode" value="" class="form-control">
-                            </div>
-                          </td>
-                          <td style="width: 20%">
-                            <div class="form-group half">
-                              <input type="text" name="kode" value="" class="form-control"> -
-                              <input type="text" name="kode" value="" class="form-control">
-                            </div>
-                          </td>
-                          <td style="width: 20%">
-                            <div class="form-group half">
-                              <input type="text" name="kode" value="" class="form-control"> -
-                              <input type="text" name="kode" value="" class="form-control">
-                            </div>
-                            <p class="text-left">Kembali</p>
-                            <div class="form-group half">
-                              <input type="text" name="kode" value="" class="form-control"> -
-                              <input type="text" name="kode" value="" class="form-control">
-                            </div>
+                            <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                           </td>
                         </tr>
                       </tbody>
+                      <tfoot>
+                        <tr>
+                          <td>
+                            <input type="checkbox">
+                          </td>
+                          <td class="text-left">Data input <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></td>
+                          <td class="text-left">Status <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></td>
+                          <td class="text-left">Action <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></th>
+                        </tr>
+                      </tfoot>
                     </table>
                   </div>
-                </div>
-              </div>
-
-              <div class="button-submit-form">
-                <div class="row">
-                  <div class="col-md-6 col-xs-12 col-sm-6">
-                    <button type="button" name="button" class="btn-cancel">BATAL</button>
+                  <div class="setting">
+                    <div class="footer-list-table">
+                      <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                          <span class="show-en">Showing</span><span class="count1">1</span> <span>to</span> <span class="count1">10</span> <span class="end">entries</span>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                          <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                              <li>
+                                <a href="#" aria-label="Previous">Previous</a>
+                              </li>
+                              <li><a href="#" class="active">1</a></li>
+                              <li><a href="#">2</a></li>
+                              <li><a href="#">3</a></li>
+                              <li><a href="#">4</a></li>
+                              <li><a href="#">5</a></li>
+                              <li>
+                                <a href="#" aria-label="Next">Next</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-md-6 col-xs-12 col-sm-6">
-                    <button type="submit" name="button" class="btn-submit"><span class="text">AJUKAN PERMOHONAN</span> <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                  <div class="button-add bottom">
+                    <button><i class="fa fa-download" aria-hidden="true"></i> Download</button>
                   </div>
+                  <span>Surat Persetujuan Penambahan Kartu Pengawasan</span>
                 </div>
               </div>
             </form>

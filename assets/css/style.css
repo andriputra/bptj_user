@@ -1167,7 +1167,8 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
   width: 100%;
   text-align: center;
 }
-.form-table table thead{
+.form-table table thead,
+.form-table table tfoot{
   background: #e6e7e9;
 }
 .form-table table thead th{
@@ -1189,5 +1190,51 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
   text-align: left;
 }
 /* End Penambahan Kartu */
+
+/* Kartu Pengawasan */
+.float-right{
+  float: right;
+  color: #b3b3b3;
+}
+.form-table table thead th.text-left{
+  text-align: left;
+}
+.form-table table tfoot td{
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+}
+.form-table table tbody .fa-check-circle{
+  color: #0db50d;
+}
+.form-table table tbody a i.fa{
+  margin: 0px 10px;
+  color: #d0d0d0;
+}
+.setting .footer-list-table nav{
+  text-align: right;
+}
+.setting .footer-list-table nav ul.pagination{
+  margin: 0px;
+}
+.setting .footer-list-table nav ul.pagination li a{
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #333333;
+}
+.setting .footer-list-table nav ul.pagination li a.active{
+  background: #ffb619;
+  color: #ffffff;
+  border-color: #ffb619;
+}
+.setting .footer-list-table nav ul.pagination li a:hover{
+  border-color: #ffb619;
+  border-width: 1px;
+  border-style: solid;
+}
+.button-add.bottom{
+  margin-bottom: 10px;
+}
+/* End Kartu Pengawasan */
 
 /* END DASHBOARD PAGE */
