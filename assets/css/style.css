@@ -1175,9 +1175,11 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
   text-align: center;
   padding: 10px;
   border: none;
+  vertical-align: middle;
 }
 .form-table table tbody td{
   padding: 10px;
+  vertical-align: middle;
 }
 .form-group.half{
   width: 100%;
@@ -1236,5 +1238,17 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
   margin-bottom: 10px;
 }
 /* End Kartu Pengawasan */
+.form-table table tbody td span.green{
+  color: #0db50d;
+}
+.form-table table tbody .fa-minus-circle{
+  color: #f30404;
+}
+.form-table table td .upload{
+  border: none;
+}
+/* Masa Berlaku */
+
+/* End Masa Berlaku */
 
 /* END DASHBOARD PAGE */
