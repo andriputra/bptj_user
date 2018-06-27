@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Monitoring Berkas - BPTJ</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Dashboard Style -->
+    <link rel="stylesheet" href="assets/css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/navmenu-reveal.css">
+    <!-- End Dashboard Style -->
+
+    <!-- Style Calendar -->
+    <link href='assets/css/fullcalendar.css' rel='stylesheet' />
+    <link href='assets/css/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <!-- Ennd Style Calendar -->
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive-style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/main-script.js"></script>
+    <!-- Dashboard script-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jasny-bootstrap.min.js"></script>
+    <!-- End Dashboard script-->
+  </head>
+<body class="bg-grey col-dark">
+  <div class="navmenu navmenu-default navmenu-fixed-left">
+      <div class="slide-menu">
+        <span class="navmenu-brand">DASHBOARD MENU</span>
+        <div class="navbar navbar-default slide-button">
+          <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+      <ul class="nav navmenu-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/dash-1.png" class="img-responsive inline-block">Perizinan Online <i class="fa fa-chevron-right col-white" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu navmenu-nav">
+            <li><a href="#">Perkotaan</a></li>
+            <li><a href="#">Pemukiman</a></li>
+          </ul>
+        </li>
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle"><img src="assets/img/dash-2.png" class="img-responsive inline-block">Monitoring Berkas</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"><img src="assets/img/dash-3.png" class="img-responsive inline-block">Cara Penggunaan</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"><img src="assets/img/dash-4.png" class="img-responsive inline-block">Call Center</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"><img src="assets/img/dash-5.png" class="img-responsive inline-block">Regulasi / Ketentuan</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="canvas">
+      <div class="container-fluid header">
+        <div class="dash-header">
+          <div class="navbar navbar-default navbar-fixed-top">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <img src="assets/img/logo-dashboard.png" alt="" class="img-responsive inline-block logo-dashboard">
+          <div class="notification">
+            <ul class="notify">
+              <li>
+                <a href="#"><i class="fa fa-phone" aria-hidden="true"></i> <span class="text">Hubungi</span></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> <span class="text">Tentang</span></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i> <span class="text">Bantuan</span></a>
+              </li>
+            </ul>
+            <div class="logout">
+              <a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> <span class="text">LOGOUT</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Breadcrumb Dashboard -->
+      <div class="breadcrumb dashboard">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-9 col-xs-12">
+              <div class="info-dashboard">
+                <h1 class="name-title col-white bread">Monitoring Berkas</h1>
+                <div class="breadcrumb-info">
+                  <i class="fa fa-home" aria-hidden="true"></i> <a href="#">Home</a> <span class="divider">/</span> <a href="#" class="active">Monitoring Berkas</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-12">
+              <div class="search-dashboard">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="#"></i></button>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Search people, documents, dates...">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Breadcrumb Dashboard -->
+
+      <div class="container-fluid top-info dash-input accordion-type">
+        <div class="top-info-dashboard">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Permohonan Izin Angkutan Dalam Trayek <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Realisasi SK: Izin Kartu Pengawasan <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  <div class="top-search-body">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-6 col-sm-6">
+                        <div class="entries">
+                          <span>Show</span>
+                          <select class="show-entries" name="">
+                            <option value="10">10</option>
+                            <option value="10">20</option>
+                            <option value="10">30</option>
+                          </select>
+                          <span>entries</span>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-6 col-sm-6">
+                        <div class="search-col">
+                          <span>Search:</span>
+                          <input type="text" name="search" value="" placeholder="" class="input">
+                          <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section one">
+                    <div class="form-table table table-responsive">
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>
+                              <input type="checkbox">
+                            </th>
+                            <th class="text-left">Data input <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></th>
+                            <th class="text-left">Status <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></th>
+                            <th class="text-left">Action <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Form Penambahan Kartu Pengawasan</td>
+                            <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+                            <td>
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Tanggal Surat Pemohon</td>
+                            <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+                            <td>
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Dokumen Pemohon</td>
+                            <td><i class="fa fa-times-circle" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Surat Kesanggupan</td>
+                            <td><i class="fa fa-times-circle" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Rekomendasi Dinas Perhubungan Asal Perjalanan</td>
+                            <td><i class="fa fa-exchange" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Nomor Surat Rekomendasi Dinas Perhubungan Asal Perjalanan</td>
+                            <td><i class="fa fa-exchange" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Tanggal Surat Rekomendasi Dinas Perhubungan Asal Perjalanan</td>
+                            <td><i class="fa fa-exchange" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Rekomendasi Dinas Perhubungan Tujuan Perjalanan</td>
+                            <td><i class="fa fa-exchange" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Nomor Surat Rekomendasi Dinas Perhubungan Tujuan Perjalanan</td>
+                            <td><i class="fa fa-exchange" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Tanggal Surat Rekomendasi Dinas Perhubungan Tujuan Perjalanan</td>
+                            <td><i class="fa fa-exchange" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">STNK</td>
+                            <td><i class="fa fa-exchange" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Form Buku Uji / SRUT Untuk Kendaraan Baru</td>
+                            <td><i class="fa fa-exchange" aria-hidden="true"></i></td>
+                            <td class="non-active">
+                              <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a>
+                              <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td>
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-left">Data input <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></td>
+                            <td class="text-left">Status <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></td>
+                            <td class="text-left">Action <span class="glyphicon glyphicon-sort float-right" aria-hidden="true"></span></th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Penambahan Kartu Pengawasan <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Penambahan Kendaraan <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Peremajaan Kendaraan <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingSix">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Penambahan Trayek <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingSeven">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    Pembaharuan Masa Berlaku <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingEight">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                    Perubahan Data Pengurus <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingNine">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                    Penggantian Dokumen <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Dashboard -->
+      <div class="copywriting">
+        <div class="container-fluid">
+          <p>Hak Cipta &copy; 2018 . <strong>Badan Pengelola Transportasi JABODETABEK</strong>  | All Rights Reserved.</p>
+        </div>
+      </div>
+      <!-- End Footer Dashboard -->
+
+    </div>
+  </body>
+</html>
+
+<script>
+</script>

@@ -1209,6 +1209,7 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
 }
 .form-table table tbody .fa-check-circle{
   color: #0db50d;
+  font-size: 18px;
 }
 .form-table table tbody a i.fa{
   margin: 0px 10px;
@@ -1242,8 +1243,11 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
 .form-table table tbody td span.green{
   color: #0db50d;
 }
-.form-table table tbody .fa-minus-circle{
+.form-table table tbody .fa-minus-circle,
+.form-table table tbody .fa-times-circle,
+.form-table table tbody .fa-exchange{
   color: #f30404;
+  font-size: 18px;
 }
 .form-table table td .upload{
   border: none;
@@ -1262,5 +1266,62 @@ ul.nav.navmenu-nav li.dropdown.open ul.dropdown-menu.navmenu-nav li a i.fa{
   padding: 8px;
 }
 /* End Pergantian Dokumen */
+
+/* Monitoring Berkas */
+.accordion-type .panel-group .panel{
+  margin-top: 0px;
+}
+.accordion-type .panel-default>.panel-heading{
+  color: #ffffff;
+  background-color: #202056;
+  border-color: #202056;
+  border-radius: 0px;
+  padding: 0px;
+}
+.accordion-type .panel-default>.panel-heading h4 a{
+  display: block;
+  padding: 20px 30px;
+  text-decoration: none;
+}
+.accordion-type .panel-default>.panel-heading h4 a i{
+  float: right;
+  font-size: 30px;
+  color: rgba(230, 231, 233, 0.41);
+  position: relative;
+  top: -7px;
+}
+.accordion-type .panel-body .table{
+  margin-bottom: 0px;
+}
+.form-table table tbody td.non-active a i.fa{
+  color: #333333;
+}
+.form-table table tbody .fa-exchange{
+  color: #ffa500;
+}
+.top-search-body{
+  background: #e6e7e9;
+  padding: 20px 30px;
+}
+.top-search-body .entries select.show-entries {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  margin-right: 10px;
+  background: transparent;
+}
+.top-search-body .search-col {
+  text-align: right;
+}
+.top-search-body .search-col input {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  width: 50%;
+  background: transparent;
+}
+/* End Monitoring Berkas */
 
 /* END DASHBOARD PAGE */

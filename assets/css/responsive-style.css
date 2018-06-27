@@ -258,6 +258,13 @@
     display: inline-block;
     width: 100%;
   }
+  .top-search-body{
+    padding: 15px 15px;
+  }
+  .top-search-body .search-col input{
+    width: 72%;
+    margin-top: 20px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 767px) and (orientation: landscape){
